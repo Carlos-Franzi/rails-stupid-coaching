@@ -3,8 +3,8 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    @question = params[:question].to_s
-    if @question == "I am going to work"
+    @question = params[:question]
+    if @question.downcase == "i am going to work"
       @answer = "Great!"
     elsif @question.end_with?("?")
       @answer = "Silly question, get dressed and go to work!"
